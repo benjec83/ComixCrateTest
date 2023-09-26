@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22222" systemVersion="22G120" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithSwiftData="YES" userDefinedModelVersionIdentifier="">
+    <entity name="BookCharcters" representedClassName="BookCharcters" syncable="YES" codeGenerationType="class">
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="book" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Books" inverseName="bookCharacters" inverseEntity="Books"/>
+        <relationship name="publisher" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Publishers" inverseName="charcter" inverseEntity="Publishers"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="name"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+    </entity>
+    <entity name="BookCreators" representedClassName="BookCreators" syncable="YES" codeGenerationType="class">
+        <relationship name="book" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Books" inverseName="bookCreatorRoles" inverseEntity="Books"/>
+        <relationship name="creator" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Creators" inverseName="bookCreatorRoles" inverseEntity="Creators"/>
+        <relationship name="creatorRole" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CreatorRoles" inverseName="bookCreatorRoles" inverseEntity="CreatorRoles"/>
+    </entity>
+    <entity name="BookEvents" representedClassName="BookEvents" syncable="YES" codeGenerationType="class">
+        <attribute name="eventDescription" optional="YES" attributeType="String"/>
+        <attribute name="eventOrder" optional="YES" attributeType="Decimal" defaultValueString="0.0"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="books" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Books" inverseName="bookEvents" inverseEntity="Books"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="name"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+    </entity>
+    <entity name="BookLocations" representedClassName="BookLocations" syncable="YES" codeGenerationType="class">
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="books" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Books" inverseName="bookLocations" inverseEntity="Books"/>
+        <relationship name="publisher" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Publishers" inverseName="location" inverseEntity="Publishers"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="name"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+    </entity>
+    <entity name="BookOrdering" representedClassName="BookOrdering" syncable="YES" codeGenerationType="class"/>
+    <entity name="Books" representedClassName="Books" syncable="YES" codeGenerationType="class">
+        <attribute name="cachedThumbnailData" optional="YES" attributeType="Binary"/>
+        <attribute name="communityRating" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="condition" optional="YES" attributeType="String"/>
+        <attribute name="coverDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="coverPrice" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="currentValue" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="dateAdded" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="dateModified" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="downloaded" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="fileName" optional="YES" attributeType="String"/>
+        <attribute name="filePath" optional="YES" attributeType="String"/>
+        <attribute name="gradedBy" optional="YES" attributeType="String"/>
+        <attribute name="gradeValue" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="isFavorite" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="issueNumber" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="language" optional="YES" attributeType="String"/>
+        <attribute name="notes" optional="YES" attributeType="String"/>
+        <attribute name="pageCount" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="personalRating" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="purchaseDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="purchaseFrom" optional="YES" attributeType="String"/>
+        <attribute name="purchasePrice" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="read" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="releaseDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="summary" optional="YES" attributeType="String"/>
+        <attribute name="thumbnailPath" optional="YES" attributeType="String"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
+        <attribute name="volumeNumber" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="volumeYear" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="web" optional="YES" attributeType="String"/>
+        <relationship name="bookCharacters" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="BookCharcters" inverseName="book" inverseEntity="BookCharcters"/>
+        <relationship name="bookCreatorRoles" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="BookCreators" inverseName="book" inverseEntity="BookCreators"/>
+        <relationship name="bookEvents" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="BookEvents" inverseName="books" inverseEntity="BookEvents"/>
+        <relationship name="bookLocations" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="BookLocations" inverseName="books" inverseEntity="BookLocations"/>
+        <relationship name="bookSeries" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="BookSeries" inverseName="book" inverseEntity="BookSeries"/>
+        <relationship name="bookStoryArcs" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="BookStoryArcs" inverseName="books" inverseEntity="BookStoryArcs"/>
+        <relationship name="bookTeams" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="BookTeams" inverseName="books" inverseEntity="BookTeams"/>
+        <relationship name="eras" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Eras" inverseName="books" inverseEntity="Eras"/>
+        <relationship name="formats" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Formats" inverseName="book" inverseEntity="Formats"/>
+        <relationship name="imprints" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Imprints" inverseName="book" inverseEntity="Imprints"/>
+        <relationship name="pages" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Pages" inverseName="book" inverseEntity="Pages"/>
+        <relationship name="publishers" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Publishers" inverseName="book" inverseEntity="Publishers"/>
+        <relationship name="readingLists" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="ReadingLists" inverseName="book" inverseEntity="ReadingLists"/>
+    </entity>
+    <entity name="BookSeries" representedClassName="BookSeries" syncable="YES" codeGenerationType="class">
+        <attribute name="dateFinished" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="dateStarted" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="isFavorite" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="seriesDescription" optional="YES" attributeType="String"/>
+        <relationship name="book" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Books" inverseName="bookSeries" inverseEntity="Books"/>
+        <relationship name="publisher" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Publishers" inverseName="series" inverseEntity="Publishers"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="name"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+    </entity>
+    <entity name="BookStoryArcs" representedClassName="BookStoryArcs" syncable="YES" codeGenerationType="class">
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="storyArcDescription" optional="YES" attributeType="String"/>
+        <attribute name="storyArcOrder" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="books" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Books" inverseName="bookStoryArcs" inverseEntity="Books"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="name"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+    </entity>
+    <entity name="BookTeams" representedClassName="BookTeams" syncable="YES" codeGenerationType="class">
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="books" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Books" inverseName="bookTeams" inverseEntity="Books"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="name"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+    </entity>
+    <entity name="CreatorRoles" representedClassName="CreatorRoles" syncable="YES" codeGenerationType="class">
+        <attribute name="role" optional="YES" attributeType="String"/>
+        <relationship name="bookCreatorRoles" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="BookCreators" inverseName="creatorRole" inverseEntity="BookCreators"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="role"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+    </entity>
+    <entity name="Creators" representedClassName="Creators" syncable="YES" codeGenerationType="class">
+        <attribute name="creatorBio" optional="YES" attributeType="String"/>
+        <attribute name="creatorBirthday" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="creatorDeathDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="creatorProfilePic" optional="YES" attributeType="Binary"/>
+        <attribute name="creatorSocial" optional="YES" attributeType="String"/>
+        <attribute name="creatorWebsite" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="bookCreatorRoles" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="BookCreators" inverseName="creator" inverseEntity="BookCreators"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="name"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+    </entity>
+    <entity name="Eras" representedClassName="Eras" syncable="YES" codeGenerationType="class">
+        <attribute name="eraDescription" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="books" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Books" inverseName="eras" inverseEntity="Books"/>
+        <relationship name="publisher" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Publishers" inverseName="era" inverseEntity="Publishers"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="name"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+    </entity>
+    <entity name="Formats" representedClassName="Formats" syncable="YES" codeGenerationType="class">
+        <attribute name="filePath" optional="YES" attributeType="String"/>
+        <attribute name="isDigital" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="purchaseLink" optional="YES" attributeType="String"/>
+        <relationship name="book" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Books" inverseName="formats" inverseEntity="Books"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="name"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+    </entity>
+    <entity name="Imprints" representedClassName="Imprints" syncable="YES" codeGenerationType="class">
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="book" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Books" inverseName="imprints" inverseEntity="Books"/>
+        <relationship name="publisher" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Publishers" inverseName="imprints" inverseEntity="Publishers"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="name"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+    </entity>
+    <entity name="Pages" representedClassName="Pages" syncable="YES" codeGenerationType="class">
+        <attribute name="pageNumber" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="pageType" optional="YES" attributeType="String"/>
+        <relationship name="book" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Books" inverseName="pages" inverseEntity="Books"/>
+    </entity>
+    <entity name="Publishers" representedClassName="Publishers" syncable="YES" codeGenerationType="class">
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="publisherDescription" optional="YES" attributeType="String"/>
+        <relationship name="book" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Books" inverseName="publishers" inverseEntity="Books"/>
+        <relationship name="charcter" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="BookCharcters" inverseName="publisher" inverseEntity="BookCharcters"/>
+        <relationship name="era" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Eras" inverseName="publisher" inverseEntity="Eras"/>
+        <relationship name="imprints" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Imprints" inverseName="publisher" inverseEntity="Imprints"/>
+        <relationship name="location" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="BookLocations" inverseName="publisher" inverseEntity="BookLocations"/>
+        <relationship name="series" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="BookSeries" inverseName="publisher" inverseEntity="BookSeries"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="name"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+    </entity>
+    <entity name="ReadingLists" representedClassName="ReadingLists" syncable="YES" codeGenerationType="class">
+        <attribute name="listDescription" optional="YES" attributeType="String"/>
+        <attribute name="listOrder" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="book" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Books" inverseName="readingLists" inverseEntity="Books"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="name"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+    </entity>
+</model>

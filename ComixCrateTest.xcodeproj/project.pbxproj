@@ -11,6 +11,16 @@
 		4A765AA62AB60BBA002EFF7C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A765AA52AB60BBA002EFF7C /* ContentView.swift */; };
 		4A765AA82AB60BBB002EFF7C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A765AA72AB60BBB002EFF7C /* Assets.xcassets */; };
 		4A765AAC2AB60BBB002EFF7C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A765AAB2AB60BBB002EFF7C /* Preview Assets.xcassets */; };
+		4A765AB52AB60BCF002EFF7C /* LibraryData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4A765AB32AB60BCF002EFF7C /* LibraryData.xcdatamodeld */; };
+		4A765AB72AB60C33002EFF7C /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A765AB62AB60C33002EFF7C /* DataController.swift */; };
+		4A765ABA2AB61084002EFF7C /* LibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A765AB92AB61084002EFF7C /* LibraryView.swift */; };
+		4A765ABC2AB6120C002EFF7C /* BookDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A765ABB2AB6120C002EFF7C /* BookDetailsView.swift */; };
+		4A765ABE2AB61254002EFF7C /* AddComicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A765ABD2AB61254002EFF7C /* AddComicView.swift */; };
+		4AE045312AC36BA1001CE573 /* SuggestionPopover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE045302AC36BA1001CE573 /* SuggestionPopover.swift */; };
+		4AE822122AC2011A00BFD34F /* EditBookViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE822112AC2011A00BFD34F /* EditBookViewModel.swift */; };
+		4AF9A62C2ABF8F3100E5D8F0 /* EditBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF9A62B2ABF8F3100E5D8F0 /* EditBook.swift */; };
+		4AF9A62F2AC08B0000E5D8F0 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF9A62E2AC08B0000E5D8F0 /* Extensions.swift */; };
+		4AF9A6312AC0CDF600E5D8F0 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF9A6302AC0CDF600E5D8F0 /* Test.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +30,16 @@
 		4A765AA72AB60BBB002EFF7C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4A765AA92AB60BBB002EFF7C /* ComixCrate.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ComixCrate.entitlements; sourceTree = "<group>"; };
 		4A765AAB2AB60BBB002EFF7C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		4A765AB42AB60BCF002EFF7C /* LibraryData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LibraryData.xcdatamodel; sourceTree = "<group>"; };
+		4A765AB62AB60C33002EFF7C /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
+		4A765AB92AB61084002EFF7C /* LibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryView.swift; sourceTree = "<group>"; };
+		4A765ABB2AB6120C002EFF7C /* BookDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailsView.swift; sourceTree = "<group>"; };
+		4A765ABD2AB61254002EFF7C /* AddComicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddComicView.swift; sourceTree = "<group>"; };
+		4AE045302AC36BA1001CE573 /* SuggestionPopover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionPopover.swift; sourceTree = "<group>"; };
+		4AE822112AC2011A00BFD34F /* EditBookViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditBookViewModel.swift; sourceTree = "<group>"; };
+		4AF9A62B2ABF8F3100E5D8F0 /* EditBook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditBook.swift; sourceTree = "<group>"; };
+		4AF9A62E2AC08B0000E5D8F0 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		4AF9A6302AC0CDF600E5D8F0 /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,8 +72,12 @@
 		4A765AA22AB60BBA002EFF7C /* ComixCrate */ = {
 			isa = PBXGroup;
 			children = (
+				4AE822102AC2010500BFD34F /* ViewModels */,
+				4AF9A62D2AC08AEE00E5D8F0 /* Helpers */,
+				4A765ABF2AB645CA002EFF7C /* NSManagedObject Subclasses */,
+				4A765AB82AB61061002EFF7C /* Views */,
+				4A765AB22AB60BC0002EFF7C /* Data */,
 				4A765AA32AB60BBA002EFF7C /* ComixCrateApp.swift */,
-				4A765AA52AB60BBA002EFF7C /* ContentView.swift */,
 				4A765AA72AB60BBB002EFF7C /* Assets.xcassets */,
 				4A765AA92AB60BBB002EFF7C /* ComixCrate.entitlements */,
 				4A765AAA2AB60BBB002EFF7C /* Preview Content */,
@@ -67,6 +91,54 @@
 				4A765AAB2AB60BBB002EFF7C /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		4A765AB22AB60BC0002EFF7C /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				4A765AB32AB60BCF002EFF7C /* LibraryData.xcdatamodeld */,
+				4A765AB62AB60C33002EFF7C /* DataController.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		4A765AB82AB61061002EFF7C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4A765AA52AB60BBA002EFF7C /* ContentView.swift */,
+				4A765AB92AB61084002EFF7C /* LibraryView.swift */,
+				4A765ABB2AB6120C002EFF7C /* BookDetailsView.swift */,
+				4A765ABD2AB61254002EFF7C /* AddComicView.swift */,
+				4AF9A62B2ABF8F3100E5D8F0 /* EditBook.swift */,
+				4AF9A6302AC0CDF600E5D8F0 /* Test.swift */,
+				4AE045302AC36BA1001CE573 /* SuggestionPopover.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+			usesTabs = 0;
+		};
+		4A765ABF2AB645CA002EFF7C /* NSManagedObject Subclasses */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "NSManagedObject Subclasses";
+			sourceTree = "<group>";
+			usesTabs = 0;
+		};
+		4AE822102AC2010500BFD34F /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				4AE822112AC2011A00BFD34F /* EditBookViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		4AF9A62D2AC08AEE00E5D8F0 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				4AF9A62E2AC08B0000E5D8F0 /* Extensions.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,8 +211,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4AE822122AC2011A00BFD34F /* EditBookViewModel.swift in Sources */,
 				4A765AA62AB60BBA002EFF7C /* ContentView.swift in Sources */,
+				4A765AB72AB60C33002EFF7C /* DataController.swift in Sources */,
+				4A765AB52AB60BCF002EFF7C /* LibraryData.xcdatamodeld in Sources */,
+				4A765ABA2AB61084002EFF7C /* LibraryView.swift in Sources */,
+				4AE045312AC36BA1001CE573 /* SuggestionPopover.swift in Sources */,
+				4AF9A62F2AC08B0000E5D8F0 /* Extensions.swift in Sources */,
+				4A765ABC2AB6120C002EFF7C /* BookDetailsView.swift in Sources */,
 				4A765AA42AB60BBA002EFF7C /* ComixCrateApp.swift in Sources */,
+				4AF9A6312AC0CDF600E5D8F0 /* Test.swift in Sources */,
+				4A765ABE2AB61254002EFF7C /* AddComicView.swift in Sources */,
+				4AF9A62C2ABF8F3100E5D8F0 /* EditBook.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -359,6 +441,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		4A765AB32AB60BCF002EFF7C /* LibraryData.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				4A765AB42AB60BCF002EFF7C /* LibraryData.xcdatamodel */,
+			);
+			currentVersion = 4A765AB42AB60BCF002EFF7C /* LibraryData.xcdatamodel */;
+			path = LibraryData.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 4A765A982AB60BBA002EFF7C /* Project object */;
 }

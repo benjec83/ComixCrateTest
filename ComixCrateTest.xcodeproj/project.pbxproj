@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A63B14C2AC778C90007D4C6 /* Books+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A63B14A2AC778C90007D4C6 /* Books+CoreDataClass.swift */; };
+		4A63B14D2AC778C90007D4C6 /* Books+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A63B14B2AC778C90007D4C6 /* Books+CoreDataProperties.swift */; };
+		4A63B1522AC7795E0007D4C6 /* JoinStoryArc+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A63B14E2AC7795E0007D4C6 /* JoinStoryArc+CoreDataClass.swift */; };
+		4A63B1532AC7795E0007D4C6 /* JoinStoryArc+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A63B14F2AC7795E0007D4C6 /* JoinStoryArc+CoreDataProperties.swift */; };
+		4A63B1542AC7795E0007D4C6 /* BookStoryArcs+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A63B1502AC7795E0007D4C6 /* BookStoryArcs+CoreDataClass.swift */; };
+		4A63B1552AC7795E0007D4C6 /* BookStoryArcs+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A63B1512AC7795E0007D4C6 /* BookStoryArcs+CoreDataProperties.swift */; };
+		4A63B1572AC78AAC0007D4C6 /* Subclass Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A63B1562AC78AAC0007D4C6 /* Subclass Extensions.swift */; };
+		4A63B15A2AC78ED30007D4C6 /* BookSeries+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A63B1582AC78ED30007D4C6 /* BookSeries+CoreDataClass.swift */; };
+		4A63B15B2AC78ED30007D4C6 /* BookSeries+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A63B1592AC78ED30007D4C6 /* BookSeries+CoreDataProperties.swift */; };
+		4A63B15E2AC790E70007D4C6 /* BookLocations+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A63B15C2AC790E70007D4C6 /* BookLocations+CoreDataClass.swift */; };
+		4A63B15F2AC790E70007D4C6 /* BookLocations+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A63B15D2AC790E70007D4C6 /* BookLocations+CoreDataProperties.swift */; };
 		4A765AA42AB60BBA002EFF7C /* ComixCrateApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A765AA32AB60BBA002EFF7C /* ComixCrateApp.swift */; };
 		4A765AA62AB60BBA002EFF7C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A765AA52AB60BBA002EFF7C /* ContentView.swift */; };
 		4A765AA82AB60BBB002EFF7C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A765AA72AB60BBB002EFF7C /* Assets.xcassets */; };
@@ -18,12 +29,23 @@
 		4A765ABE2AB61254002EFF7C /* AddComicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A765ABD2AB61254002EFF7C /* AddComicView.swift */; };
 		4AE045312AC36BA1001CE573 /* SuggestionPopover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE045302AC36BA1001CE573 /* SuggestionPopover.swift */; };
 		4AE822122AC2011A00BFD34F /* EditBookViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE822112AC2011A00BFD34F /* EditBookViewModel.swift */; };
-		4AF9A62C2ABF8F3100E5D8F0 /* EditBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF9A62B2ABF8F3100E5D8F0 /* EditBook.swift */; };
+		4AF9A62C2ABF8F3100E5D8F0 /* EditComic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF9A62B2ABF8F3100E5D8F0 /* EditComic.swift */; };
 		4AF9A62F2AC08B0000E5D8F0 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF9A62E2AC08B0000E5D8F0 /* Extensions.swift */; };
 		4AF9A6312AC0CDF600E5D8F0 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF9A6302AC0CDF600E5D8F0 /* Test.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4A63B14A2AC778C90007D4C6 /* Books+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Books+CoreDataClass.swift"; sourceTree = "<group>"; };
+		4A63B14B2AC778C90007D4C6 /* Books+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Books+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		4A63B14E2AC7795E0007D4C6 /* JoinStoryArc+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JoinStoryArc+CoreDataClass.swift"; sourceTree = "<group>"; };
+		4A63B14F2AC7795E0007D4C6 /* JoinStoryArc+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JoinStoryArc+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		4A63B1502AC7795E0007D4C6 /* BookStoryArcs+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BookStoryArcs+CoreDataClass.swift"; sourceTree = "<group>"; };
+		4A63B1512AC7795E0007D4C6 /* BookStoryArcs+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BookStoryArcs+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		4A63B1562AC78AAC0007D4C6 /* Subclass Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Subclass Extensions.swift"; sourceTree = "<group>"; };
+		4A63B1582AC78ED30007D4C6 /* BookSeries+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BookSeries+CoreDataClass.swift"; sourceTree = "<group>"; };
+		4A63B1592AC78ED30007D4C6 /* BookSeries+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BookSeries+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		4A63B15C2AC790E70007D4C6 /* BookLocations+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BookLocations+CoreDataClass.swift"; sourceTree = "<group>"; };
+		4A63B15D2AC790E70007D4C6 /* BookLocations+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BookLocations+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		4A765AA02AB60BBA002EFF7C /* ComixCrateTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ComixCrateTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A765AA32AB60BBA002EFF7C /* ComixCrateApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComixCrateApp.swift; sourceTree = "<group>"; };
 		4A765AA52AB60BBA002EFF7C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -36,8 +58,9 @@
 		4A765ABB2AB6120C002EFF7C /* BookDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailsView.swift; sourceTree = "<group>"; };
 		4A765ABD2AB61254002EFF7C /* AddComicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddComicView.swift; sourceTree = "<group>"; };
 		4AE045302AC36BA1001CE573 /* SuggestionPopover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionPopover.swift; sourceTree = "<group>"; };
+		4AE7ED7A2AC904AD00FE7ADC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		4AE822112AC2011A00BFD34F /* EditBookViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditBookViewModel.swift; sourceTree = "<group>"; };
-		4AF9A62B2ABF8F3100E5D8F0 /* EditBook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditBook.swift; sourceTree = "<group>"; };
+		4AF9A62B2ABF8F3100E5D8F0 /* EditComic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditComic.swift; sourceTree = "<group>"; };
 		4AF9A62E2AC08B0000E5D8F0 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		4AF9A6302AC0CDF600E5D8F0 /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -72,6 +95,7 @@
 		4A765AA22AB60BBA002EFF7C /* ComixCrateTest */ = {
 			isa = PBXGroup;
 			children = (
+				4AE7ED7A2AC904AD00FE7ADC /* Info.plist */,
 				4AE822102AC2010500BFD34F /* ViewModels */,
 				4AF9A62D2AC08AEE00E5D8F0 /* Helpers */,
 				4A765ABF2AB645CA002EFF7C /* NSManagedObject Subclasses */,
@@ -109,7 +133,7 @@
 				4A765AB92AB61084002EFF7C /* LibraryView.swift */,
 				4A765ABB2AB6120C002EFF7C /* BookDetailsView.swift */,
 				4A765ABD2AB61254002EFF7C /* AddComicView.swift */,
-				4AF9A62B2ABF8F3100E5D8F0 /* EditBook.swift */,
+				4AF9A62B2ABF8F3100E5D8F0 /* EditComic.swift */,
 				4AF9A6302AC0CDF600E5D8F0 /* Test.swift */,
 				4AE045302AC36BA1001CE573 /* SuggestionPopover.swift */,
 			);
@@ -120,6 +144,17 @@
 		4A765ABF2AB645CA002EFF7C /* NSManagedObject Subclasses */ = {
 			isa = PBXGroup;
 			children = (
+				4A63B15C2AC790E70007D4C6 /* BookLocations+CoreDataClass.swift */,
+				4A63B15D2AC790E70007D4C6 /* BookLocations+CoreDataProperties.swift */,
+				4A63B1582AC78ED30007D4C6 /* BookSeries+CoreDataClass.swift */,
+				4A63B1592AC78ED30007D4C6 /* BookSeries+CoreDataProperties.swift */,
+				4A63B14E2AC7795E0007D4C6 /* JoinStoryArc+CoreDataClass.swift */,
+				4A63B14F2AC7795E0007D4C6 /* JoinStoryArc+CoreDataProperties.swift */,
+				4A63B1502AC7795E0007D4C6 /* BookStoryArcs+CoreDataClass.swift */,
+				4A63B1512AC7795E0007D4C6 /* BookStoryArcs+CoreDataProperties.swift */,
+				4A63B14A2AC778C90007D4C6 /* Books+CoreDataClass.swift */,
+				4A63B14B2AC778C90007D4C6 /* Books+CoreDataProperties.swift */,
+				4A63B1562AC78AAC0007D4C6 /* Subclass Extensions.swift */,
 			);
 			path = "NSManagedObject Subclasses";
 			sourceTree = "<group>";
@@ -212,17 +247,28 @@
 			buildActionMask = 2147483647;
 			files = (
 				4AE822122AC2011A00BFD34F /* EditBookViewModel.swift in Sources */,
+				4A63B1552AC7795E0007D4C6 /* BookStoryArcs+CoreDataProperties.swift in Sources */,
 				4A765AA62AB60BBA002EFF7C /* ContentView.swift in Sources */,
+				4A63B1532AC7795E0007D4C6 /* JoinStoryArc+CoreDataProperties.swift in Sources */,
+				4A63B15F2AC790E70007D4C6 /* BookLocations+CoreDataProperties.swift in Sources */,
 				4A765AB72AB60C33002EFF7C /* DataController.swift in Sources */,
 				4A765AB52AB60BCF002EFF7C /* LibraryData.xcdatamodeld in Sources */,
 				4A765ABA2AB61084002EFF7C /* LibraryView.swift in Sources */,
+				4A63B15E2AC790E70007D4C6 /* BookLocations+CoreDataClass.swift in Sources */,
+				4A63B1542AC7795E0007D4C6 /* BookStoryArcs+CoreDataClass.swift in Sources */,
+				4A63B1572AC78AAC0007D4C6 /* Subclass Extensions.swift in Sources */,
 				4AE045312AC36BA1001CE573 /* SuggestionPopover.swift in Sources */,
+				4A63B14D2AC778C90007D4C6 /* Books+CoreDataProperties.swift in Sources */,
+				4A63B15B2AC78ED30007D4C6 /* BookSeries+CoreDataProperties.swift in Sources */,
 				4AF9A62F2AC08B0000E5D8F0 /* Extensions.swift in Sources */,
+				4A63B1522AC7795E0007D4C6 /* JoinStoryArc+CoreDataClass.swift in Sources */,
 				4A765ABC2AB6120C002EFF7C /* BookDetailsView.swift in Sources */,
+				4A63B14C2AC778C90007D4C6 /* Books+CoreDataClass.swift in Sources */,
+				4A63B15A2AC78ED30007D4C6 /* BookSeries+CoreDataClass.swift in Sources */,
 				4A765AA42AB60BBA002EFF7C /* ComixCrateApp.swift in Sources */,
 				4AF9A6312AC0CDF600E5D8F0 /* Test.swift in Sources */,
 				4A765ABE2AB61254002EFF7C /* AddComicView.swift in Sources */,
-				4AF9A62C2ABF8F3100E5D8F0 /* EditBook.swift in Sources */,
+				4AF9A62C2ABF8F3100E5D8F0 /* EditComic.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -356,6 +402,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ComixCrateTest/Info.plist;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -394,6 +441,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ComixCrateTest/Info.plist;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;

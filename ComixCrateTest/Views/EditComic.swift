@@ -1,5 +1,5 @@
 //
-//  EditBook.swift
+//  EditComic.swift
 //  ComixCrateTestTest
 //
 //  Created by Ben Carney on 9/23/23.
@@ -8,7 +8,7 @@
 import SwiftUI
 import CoreData
 
-struct EditBook: View {
+struct EditComic: View {
     @Environment(\.managedObjectContext) var moc
     @ObservedObject var viewModel: EditBookViewModel
 
@@ -25,20 +25,44 @@ struct EditBook: View {
 
         _activeViews = activeViews
         self.viewModel = viewModel
-        print("EditBook init completed")
+        print("EditComic init completed")
     }
-        
+  
+    
+    
     var body: some View {
         
         Form {
             Section {
                 Text("Title")
+                    .font(.subheadline)
+                    .foregroundStyle(Color.accentColor)
                 TextField("Add Title", text: $viewModel.tempTitle)
                 Text("Issue Number")
+                    .font(.subheadline)
+                    .foregroundStyle(Color.accentColor)
                 TextField("Add Issue Number", text: $viewModel.tempIssueNumber)
                 Text("Series")
+                        .font(.subheadline)
+                        .foregroundStyle(Color.accentColor)
                 TextField("Add Series", text: $viewModel.tempSeries)
             }
+            
+            Section(header: Text("Story Arcs")) {
+                ForEach(viewModel.tempStoryArcs.indices, id: \.self) { index in
+                    HStack {
+                        TextField("Story Arc \(index + 1)", text: $viewModel.tempStoryArcs[index])
+                        TextField("Story Arc Part \(index + 1)", value: $viewModel.tempStoryArcParts[index], format: .number)
+                    }
+                }
+                .onDelete(perform: removeStoryArc)
+                
+                Button("Add Story Arc") {
+                    viewModel.tempStoryArcs.append("")
+                }
+                .buttonStyle(.borderedProminent)
+            }
+
             Section {
                 HStack(alignment: .center) {
                     Spacer()
@@ -78,7 +102,7 @@ struct EditBook: View {
             )
         }
         .onAppear {
-            print("EditBook View appears")
+            print("EditComic View appears")
             print("Book title: \(book?.title ?? "nil")")
             print("Book issue number: \(book?.issueNumber ?? 0)")
             print("Book series: \(book?.bookSeries?.name ?? "nil")")
@@ -86,7 +110,6 @@ struct EditBook: View {
             // Debugging statements
             print("ViewModel - Title: \(viewModel.tempTitle), Issue Number: \(viewModel.tempIssueNumber), Series: \(viewModel.tempSeries)")
             print("Original Book - Title: \(book?.title ?? "nil"), Issue Number: \(String(book?.issueNumber ?? 0)), Series: \(book?.bookSeries?.name ?? "nil")")
-            print("Has Changes: \(viewModel.hasChanges)")
         }
 
         .navigationTitle(Text(book?.title ?? "Edit This Book"))
@@ -94,22 +117,7 @@ struct EditBook: View {
         
     }
     
+    func removeStoryArc(at offsets: IndexSet) {
+        viewModel.tempStoryArcs.remove(atOffsets: offsets)
+    }
 }
-
-//struct EditBook_Previews: PreviewProvider {
-//    @State static var dummyActiveViews: [Books] = []
-//    
-//    static var previews: some View {
-//        let context = NSManagedObjectContext.preview
-//        let book = Books(context: context)
-//        book.title = "Sample Book Title"
-//        book.issueNumber = 1
-//        
-//        let viewModel = EditBookViewModel(book: book, moc: context)
-//        
-//        return EditBook(book: <#Binding<Books?>#>, activeViews: $dummyActiveViews, viewModel: viewModel) // Removed the book argument
-//            .environment(\.managedObjectContext, context)
-//    }
-//}
-
-

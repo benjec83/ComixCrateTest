@@ -26,7 +26,7 @@
             </uniquenessConstraint>
         </uniquenessConstraints>
     </entity>
-    <entity name="BookLocations" representedClassName="BookLocations" syncable="YES" codeGenerationType="class">
+    <entity name="BookLocations" representedClassName="BookLocations" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String"/>
         <relationship name="books" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Books" inverseName="bookLocations" inverseEntity="Books"/>
         <relationship name="publisher" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Publishers" inverseName="location" inverseEntity="Publishers"/>
@@ -37,7 +37,7 @@
         </uniquenessConstraints>
     </entity>
     <entity name="BookOrdering" representedClassName="BookOrdering" syncable="YES" codeGenerationType="class"/>
-    <entity name="Books" representedClassName="Books" syncable="YES" codeGenerationType="class">
+    <entity name="Books" representedClassName="Books" syncable="YES">
         <attribute name="cachedThumbnailData" optional="YES" attributeType="Binary"/>
         <attribute name="communityRating" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="condition" optional="YES" attributeType="String"/>
@@ -83,7 +83,7 @@
         <relationship name="publishers" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Publishers" inverseName="book" inverseEntity="Publishers"/>
         <relationship name="readingLists" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="ReadingLists" inverseName="book" inverseEntity="ReadingLists"/>
     </entity>
-    <entity name="BookSeries" representedClassName="BookSeries" syncable="YES" codeGenerationType="class">
+    <entity name="BookSeries" representedClassName="BookSeries" syncable="YES">
         <attribute name="dateFinished" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="dateStarted" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="isFavorite" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
@@ -97,11 +97,11 @@
             </uniquenessConstraint>
         </uniquenessConstraints>
     </entity>
-    <entity name="BookStoryArcs" representedClassName="BookStoryArcs" syncable="YES" codeGenerationType="class">
+    <entity name="BookStoryArcs" representedClassName="BookStoryArcs" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="storyArcDescription" optional="YES" attributeType="String"/>
         <attribute name="storyArcOrder" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
-        <relationship name="joinBooks" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="JoinStoryArc" inverseName="storyArc" inverseEntity="JoinStoryArc"/>
+        <relationship name="joinStoryArc" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="JoinStoryArc" inverseName="storyArc" inverseEntity="JoinStoryArc"/>
         <uniquenessConstraints>
             <uniquenessConstraint>
                 <constraint value="name"/>
@@ -174,10 +174,10 @@
             </uniquenessConstraint>
         </uniquenessConstraints>
     </entity>
-    <entity name="JoinStoryArc" representedClassName="JoinStoryArc" syncable="YES" codeGenerationType="class">
+    <entity name="JoinStoryArc" representedClassName="JoinStoryArc" syncable="YES">
         <attribute name="storyArcPart" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <relationship name="book" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Books" inverseName="joinStoryArcs" inverseEntity="Books"/>
-        <relationship name="storyArc" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="BookStoryArcs" inverseName="joinBooks" inverseEntity="BookStoryArcs"/>
+        <relationship name="storyArc" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="BookStoryArcs" inverseName="joinStoryArc" inverseEntity="BookStoryArcs"/>
     </entity>
     <entity name="Pages" representedClassName="Pages" syncable="YES" codeGenerationType="class">
         <attribute name="pageNumber" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>

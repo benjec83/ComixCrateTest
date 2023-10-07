@@ -67,19 +67,20 @@ class EditBookViewModel: ObservableObject {
                 let join = JoinStoryArc(context: moc)
                 join.book = book
                 join.storyArc = existingStoryArc
-                join.storyArcPart = tempStoryArcParts[index] // Update this line
+                join.storyArcPart = tempStoryArcParts[index] != 0 ? tempStoryArcParts[index] : 0  // Ensure it's set to 0 if blank
             } else {
                 // If the story arc doesn't exist, create it and then create a JoinStoryArc relationship
                 let newStoryArc = BookStoryArcs(context: moc)
                 newStoryArc.name = arcName
-                
+                    
                 let join = JoinStoryArc(context: moc)
                 join.book = book
                 join.storyArc = newStoryArc
-                join.storyArcPart = tempStoryArcParts[index] // Update this line
+                join.storyArcPart = tempStoryArcParts[index] != 0 ? tempStoryArcParts[index] : 0  // Ensure it's set to 0 if blank
             }
         }
     }
+
 
     func saveNewComic(joinStoryArc: String, joinStoryArcPart: Int16) {
         book.id = UUID()
@@ -119,6 +120,8 @@ class EditBookViewModel: ObservableObject {
         }
         if let intValue = Int16(tempIssueNumber), intValue != book.issueNumber {
             book.issueNumber = intValue
+        } else if tempIssueNumber.isEmpty {
+            book.issueNumber = 0
         }
         
         // Fetch or create the BookSeries entity
@@ -182,6 +185,15 @@ class EditBookViewModel: ObservableObject {
             }
         } else {
             print("No Changes to Save")
+        }
+    }
+
+    func deleteBook() {
+        moc.delete(book)
+        do {
+            try moc.save()
+        } catch {
+            print("Failed to delete book: \(error.localizedDescription)")
         }
     }
 

@@ -1,5 +1,5 @@
 //
-//  EditBookViewModel.swift
+//  SelectedBookViewModel.swift
 //  ComixCrateTestTest
 //
 //  Created by Ben Carney on 9/25/23.
@@ -8,7 +8,7 @@
 import Foundation
 import CoreData
 
-class EditBookViewModel: ObservableObject {
+class SelectedBookViewModel: ObservableObject {
     var moc: NSManagedObjectContext
     
     @Published var isSaveComplete: Bool = false
@@ -137,7 +137,6 @@ class EditBookViewModel: ObservableObject {
         }
         
         // Handle story arcs
-        let currentArcs = book.joinStoryArcs?.compactMap { ($0 as? JoinStoryArc)?.storyArc?.name } ?? []
 
         for (index, arcName) in tempStoryArcs.enumerated() {
             // Fetch the story arc from the database
@@ -164,16 +163,15 @@ class EditBookViewModel: ObservableObject {
             }
         }
 
-
-        for arcName in currentArcs {
-            if !tempStoryArcs.contains(arcName) {
-                // If the story arc was removed, delete the JoinStoryArc relationship
-                if let joinArcToDelete = book.joinStoryArcs?.first(where: { ($0 as? JoinStoryArc)?.storyArc?.name == arcName }) as? JoinStoryArc {
-                    moc.delete(joinArcToDelete)
+        // Check and delete any BookStoryArcs entity that no longer has any related JoinStoryArcs
+        let allStoryArcsFetchRequest: NSFetchRequest<BookStoryArcs> = BookStoryArcs.fetchRequest()
+        if let allStoryArcs = try? moc.fetch(allStoryArcsFetchRequest) {
+            for storyArc in allStoryArcs {
+                if storyArc.joinStoryArc?.count == 0 {
+                    moc.delete(storyArc)
                 }
             }
         }
-
 
         if moc.hasChanges {
             do {
@@ -196,7 +194,6 @@ class EditBookViewModel: ObservableObject {
             print("Failed to delete book: \(error.localizedDescription)")
         }
     }
-
     
     func discardChanges() -> Bool {
         // Debugging statements

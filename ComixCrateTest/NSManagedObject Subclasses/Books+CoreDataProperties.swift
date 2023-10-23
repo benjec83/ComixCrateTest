@@ -2,7 +2,7 @@
 //  Books+CoreDataProperties.swift
 //  ComixCrateTest
 //
-//  Created by Ben Carney on 9/29/23.
+//  Created by Ben Carney on 10/11/23.
 //
 //
 
@@ -47,6 +47,7 @@ extension Books {
     @NSManaged public var volumeNumber: Int16
     @NSManaged public var volumeYear: Int16
     @NSManaged public var web: String?
+    @NSManaged public var bookIsRead: Bool
     @NSManaged public var bookCharacters: NSSet?
     @NSManaged public var bookCreatorRoles: NSSet?
     @NSManaged public var bookEvents: NSSet?
@@ -57,7 +58,6 @@ extension Books {
     @NSManaged public var formats: NSSet?
     @NSManaged public var imprints: Imprints?
     @NSManaged public var joinStoryArcs: NSSet?
-    @NSManaged public var pages: NSSet?
     @NSManaged public var publishers: Publishers?
     @NSManaged public var readingLists: NSSet?
 
@@ -196,23 +196,6 @@ extension Books {
 
     @objc(removeJoinStoryArcs:)
     @NSManaged public func removeFromJoinStoryArcs(_ values: NSSet)
-
-}
-
-// MARK: Generated accessors for pages
-extension Books {
-
-    @objc(addPagesObject:)
-    @NSManaged public func addToPages(_ value: Pages)
-
-    @objc(removePagesObject:)
-    @NSManaged public func removeFromPages(_ value: Pages)
-
-    @objc(addPages:)
-    @NSManaged public func addToPages(_ values: NSSet)
-
-    @objc(removePages:)
-    @NSManaged public func removeFromPages(_ values: NSSet)
 
 }
 

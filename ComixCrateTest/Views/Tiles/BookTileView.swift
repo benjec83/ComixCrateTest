@@ -8,35 +8,54 @@
 import SwiftUI
 import CoreData
 
-struct BookDetailsView: View {
+struct BookTileView: View {
     @Environment(\.managedObjectContext) var moc
     @ObservedObject var viewModel: EditBookViewModel
     
     var body: some View {
         VStack(alignment: .leading) {
-            HStack {
+            HStack(alignment: .top) {
                 Spacer()
-                Image("P00001")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                .shadow(radius: 4)
+                //                Image("P00001")
+                //                    .resizable()
+                //                    .aspectRatio(contentMode: .fit)
+                //
+                //                    .cornerRadius(5.0)
+                VStack {
+                    Text("\(viewModel.tempSeries)")
+                    Text("#\(viewModel.tempIssueNumber)")
+                }
+                .foregroundStyle(.white)
+                .fixedSize(horizontal: /*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/, vertical: /*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/)
+                .multilineTextAlignment(.center)
+                .padding()
+                .frame(width: 150, height: 200)
+                .background(Rectangle().fill(Color.accentColor))
+                .cornerRadius(5)
+                
                 Spacer()
             }
+            .shadow(color: .gray, radius: 4, x: 5, y: 5)
+            
+            
             VStack(alignment: .leading) {
                 Text("#\(viewModel.tempIssueNumber) - \(viewModel.tempTitle)")
-                Text("Story Arcs: \(storyArcs(for: viewModel.book))")
+                    .font(.subheadline)
+                
+                Text("\(viewModel.tempSeries) (2016)")
+                    .font(.caption)
                     .truncationMode(/*@START_MENU_TOKEN@*/.tail/*@END_MENU_TOKEN@*/)
-                    .lineLimit(/*@START_MENU_TOKEN@*/1/*@END_MENU_TOKEN@*/)
-                Text("Series: \(viewModel.tempSeries)")
-                    .truncationMode(/*@START_MENU_TOKEN@*/.tail/*@END_MENU_TOKEN@*/)
-                    .lineLimit(/*@START_MENU_TOKEN@*/1/*@END_MENU_TOKEN@*/)
             }
             .foregroundStyle(.black)
             .multilineTextAlignment(.leading)
-
-
+            .lineLimit(/*@START_MENU_TOKEN@*/1/*@END_MENU_TOKEN@*/)
+            
+            
+            
+            Spacer()
         }
-        .frame(height: 250)
+        .padding(5)
+        .padding(.top, 10)
         
     }
     
@@ -61,7 +80,7 @@ struct BookDetailsView_Previews: PreviewProvider {
         let viewModel = EditBookViewModel(book: sampleBook, moc: NSManagedObjectContext.preview)
         
         // Use the sample book and view model in the BookDetailsView preview
-        BookDetailsView(viewModel: viewModel)
+        BookTileView(viewModel: viewModel)
     }
 }
 

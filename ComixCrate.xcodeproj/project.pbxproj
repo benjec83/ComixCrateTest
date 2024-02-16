@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A36EB1C2AD347A3008D0135 /* TestingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A36EB1B2AD347A3008D0135 /* TestingView.swift */; };
+		4A36EB1E2AD35EEB008D0135 /* AddStoryArcButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A36EB1D2AD35EEB008D0135 /* AddStoryArcButton.swift */; };
+		4A36EB222AD380E4008D0135 /* RelatedEntitiesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A36EB212AD380E4008D0135 /* RelatedEntitiesView.swift */; };
+		4A36EB242AD381CB008D0135 /* BookRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A36EB232AD381CB008D0135 /* BookRowView.swift */; };
+		4A3ECC522AD4CF60003D48D0 /* BookDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3ECC512AD4CF60003D48D0 /* BookDetailsView.swift */; };
+		4A3ECC542AD72C97003D48D0 /* FakePublisherLogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3ECC532AD72C97003D48D0 /* FakePublisherLogo.swift */; };
+		4A3ECC562AD72DCE003D48D0 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3ECC552AD72DCE003D48D0 /* Extensions.swift */; };
+		4A3ECC582AD7305F003D48D0 /* BookActionButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3ECC572AD7305F003D48D0 /* BookActionButtons.swift */; };
 		4A63B14C2AC778C90007D4C6 /* Books+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A63B14A2AC778C90007D4C6 /* Books+CoreDataClass.swift */; };
 		4A63B14D2AC778C90007D4C6 /* Books+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A63B14B2AC778C90007D4C6 /* Books+CoreDataProperties.swift */; };
 		4A63B1522AC7795E0007D4C6 /* JoinStoryArc+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A63B14E2AC7795E0007D4C6 /* JoinStoryArc+CoreDataClass.swift */; };
@@ -25,16 +33,22 @@
 		4A765AB52AB60BCF002EFF7C /* LibraryData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4A765AB32AB60BCF002EFF7C /* LibraryData.xcdatamodeld */; };
 		4A765AB72AB60C33002EFF7C /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A765AB62AB60C33002EFF7C /* DataController.swift */; };
 		4A765ABA2AB61084002EFF7C /* LibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A765AB92AB61084002EFF7C /* LibraryView.swift */; };
-		4A765ABC2AB6120C002EFF7C /* BookDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A765ABB2AB6120C002EFF7C /* BookDetailsView.swift */; };
+		4A765ABC2AB6120C002EFF7C /* BookTileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A765ABB2AB6120C002EFF7C /* BookTileView.swift */; };
 		4A765ABE2AB61254002EFF7C /* AddComicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A765ABD2AB61254002EFF7C /* AddComicView.swift */; };
 		4AE045312AC36BA1001CE573 /* SuggestionPopover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE045302AC36BA1001CE573 /* SuggestionPopover.swift */; };
-		4AE822122AC2011A00BFD34F /* EditBookViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE822112AC2011A00BFD34F /* EditBookViewModel.swift */; };
+		4AE822122AC2011A00BFD34F /* SelectedBookViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE822112AC2011A00BFD34F /* SelectedBookViewModel.swift */; };
 		4AF9A62C2ABF8F3100E5D8F0 /* EditComic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF9A62B2ABF8F3100E5D8F0 /* EditComic.swift */; };
-		4AF9A62F2AC08B0000E5D8F0 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF9A62E2AC08B0000E5D8F0 /* Extensions.swift */; };
-		4AF9A6312AC0CDF600E5D8F0 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF9A6302AC0CDF600E5D8F0 /* Test.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4A36EB1B2AD347A3008D0135 /* TestingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingView.swift; sourceTree = "<group>"; };
+		4A36EB1D2AD35EEB008D0135 /* AddStoryArcButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddStoryArcButton.swift; sourceTree = "<group>"; };
+		4A36EB212AD380E4008D0135 /* RelatedEntitiesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelatedEntitiesView.swift; sourceTree = "<group>"; };
+		4A36EB232AD381CB008D0135 /* BookRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookRowView.swift; sourceTree = "<group>"; };
+		4A3ECC512AD4CF60003D48D0 /* BookDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailsView.swift; sourceTree = "<group>"; };
+		4A3ECC532AD72C97003D48D0 /* FakePublisherLogo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakePublisherLogo.swift; sourceTree = "<group>"; };
+		4A3ECC552AD72DCE003D48D0 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		4A3ECC572AD7305F003D48D0 /* BookActionButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookActionButtons.swift; sourceTree = "<group>"; };
 		4A63B14A2AC778C90007D4C6 /* Books+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Books+CoreDataClass.swift"; sourceTree = "<group>"; };
 		4A63B14B2AC778C90007D4C6 /* Books+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Books+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		4A63B14E2AC7795E0007D4C6 /* JoinStoryArc+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JoinStoryArc+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -55,14 +69,12 @@
 		4A765AB42AB60BCF002EFF7C /* LibraryData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LibraryData.xcdatamodel; sourceTree = "<group>"; };
 		4A765AB62AB60C33002EFF7C /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		4A765AB92AB61084002EFF7C /* LibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryView.swift; sourceTree = "<group>"; };
-		4A765ABB2AB6120C002EFF7C /* BookDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailsView.swift; sourceTree = "<group>"; };
+		4A765ABB2AB6120C002EFF7C /* BookTileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookTileView.swift; sourceTree = "<group>"; };
 		4A765ABD2AB61254002EFF7C /* AddComicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddComicView.swift; sourceTree = "<group>"; };
 		4AE045302AC36BA1001CE573 /* SuggestionPopover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionPopover.swift; sourceTree = "<group>"; };
 		4AE7ED7A2AC904AD00FE7ADC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		4AE822112AC2011A00BFD34F /* EditBookViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditBookViewModel.swift; sourceTree = "<group>"; };
+		4AE822112AC2011A00BFD34F /* SelectedBookViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedBookViewModel.swift; sourceTree = "<group>"; };
 		4AF9A62B2ABF8F3100E5D8F0 /* EditComic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditComic.swift; sourceTree = "<group>"; };
-		4AF9A62E2AC08B0000E5D8F0 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		4AF9A6302AC0CDF600E5D8F0 /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +88,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4A3ECC4C2AD4CC05003D48D0 /* Tiles */ = {
+			isa = PBXGroup;
+			children = (
+				4A765ABB2AB6120C002EFF7C /* BookTileView.swift */,
+			);
+			path = Tiles;
+			sourceTree = "<group>";
+		};
+		4A3ECC4D2AD4CC0D003D48D0 /* Rows */ = {
+			isa = PBXGroup;
+			children = (
+				4A36EB232AD381CB008D0135 /* BookRowView.swift */,
+			);
+			path = Rows;
+			sourceTree = "<group>";
+		};
+		4A3ECC4E2AD4CECE003D48D0 /* Book Details */ = {
+			isa = PBXGroup;
+			children = (
+				4A3ECC512AD4CF60003D48D0 /* BookDetailsView.swift */,
+				4A3ECC532AD72C97003D48D0 /* FakePublisherLogo.swift */,
+				4A3ECC572AD7305F003D48D0 /* BookActionButtons.swift */,
+			);
+			path = "Book Details";
+			sourceTree = "<group>";
+		};
 		4A765A972AB60BBA002EFF7C = {
 			isa = PBXGroup;
 			children = (
@@ -129,13 +167,17 @@
 		4A765AB82AB61061002EFF7C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				4A3ECC4E2AD4CECE003D48D0 /* Book Details */,
+				4A3ECC4D2AD4CC0D003D48D0 /* Rows */,
+				4A3ECC4C2AD4CC05003D48D0 /* Tiles */,
 				4A765AA52AB60BBA002EFF7C /* ContentView.swift */,
 				4A765AB92AB61084002EFF7C /* LibraryView.swift */,
-				4A765ABB2AB6120C002EFF7C /* BookDetailsView.swift */,
 				4A765ABD2AB61254002EFF7C /* AddComicView.swift */,
 				4AF9A62B2ABF8F3100E5D8F0 /* EditComic.swift */,
-				4AF9A6302AC0CDF600E5D8F0 /* Test.swift */,
 				4AE045302AC36BA1001CE573 /* SuggestionPopover.swift */,
+				4A36EB1B2AD347A3008D0135 /* TestingView.swift */,
+				4A36EB1D2AD35EEB008D0135 /* AddStoryArcButton.swift */,
+				4A36EB212AD380E4008D0135 /* RelatedEntitiesView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -163,7 +205,7 @@
 		4AE822102AC2010500BFD34F /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				4AE822112AC2011A00BFD34F /* EditBookViewModel.swift */,
+				4AE822112AC2011A00BFD34F /* SelectedBookViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -171,7 +213,7 @@
 		4AF9A62D2AC08AEE00E5D8F0 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				4AF9A62E2AC08B0000E5D8F0 /* Extensions.swift */,
+				4A3ECC552AD72DCE003D48D0 /* Extensions.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -192,6 +234,8 @@
 			dependencies = (
 			);
 			name = ComixCrateTest;
+			packageProductDependencies = (
+			);
 			productName = ComixCrate;
 			productReference = 4A765AA02AB60BBA002EFF7C /* ComixCrateTest.app */;
 			productType = "com.apple.product-type.application";
@@ -204,7 +248,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1500;
-				LastUpgradeCheck = 1500;
+				LastUpgradeCheck = 1510;
 				TargetAttributes = {
 					4A765A9F2AB60BBA002EFF7C = {
 						CreatedOnToolsVersion = 15.0;
@@ -220,6 +264,8 @@
 				Base,
 			);
 			mainGroup = 4A765A972AB60BBA002EFF7C;
+			packageReferences = (
+			);
 			productRefGroup = 4A765AA12AB60BBA002EFF7C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -246,28 +292,34 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4AE822122AC2011A00BFD34F /* EditBookViewModel.swift in Sources */,
+				4AE822122AC2011A00BFD34F /* SelectedBookViewModel.swift in Sources */,
 				4A63B1552AC7795E0007D4C6 /* BookStoryArcs+CoreDataProperties.swift in Sources */,
+				4A36EB222AD380E4008D0135 /* RelatedEntitiesView.swift in Sources */,
 				4A765AA62AB60BBA002EFF7C /* ContentView.swift in Sources */,
 				4A63B1532AC7795E0007D4C6 /* JoinStoryArc+CoreDataProperties.swift in Sources */,
 				4A63B15F2AC790E70007D4C6 /* BookLocations+CoreDataProperties.swift in Sources */,
+				4A36EB1C2AD347A3008D0135 /* TestingView.swift in Sources */,
+				4A3ECC562AD72DCE003D48D0 /* Extensions.swift in Sources */,
+				4A36EB1E2AD35EEB008D0135 /* AddStoryArcButton.swift in Sources */,
+				4A3ECC582AD7305F003D48D0 /* BookActionButtons.swift in Sources */,
 				4A765AB72AB60C33002EFF7C /* DataController.swift in Sources */,
 				4A765AB52AB60BCF002EFF7C /* LibraryData.xcdatamodeld in Sources */,
 				4A765ABA2AB61084002EFF7C /* LibraryView.swift in Sources */,
+				4A36EB242AD381CB008D0135 /* BookRowView.swift in Sources */,
+				4A3ECC542AD72C97003D48D0 /* FakePublisherLogo.swift in Sources */,
 				4A63B15E2AC790E70007D4C6 /* BookLocations+CoreDataClass.swift in Sources */,
 				4A63B1542AC7795E0007D4C6 /* BookStoryArcs+CoreDataClass.swift in Sources */,
 				4A63B1572AC78AAC0007D4C6 /* Subclass Extensions.swift in Sources */,
 				4AE045312AC36BA1001CE573 /* SuggestionPopover.swift in Sources */,
 				4A63B14D2AC778C90007D4C6 /* Books+CoreDataProperties.swift in Sources */,
 				4A63B15B2AC78ED30007D4C6 /* BookSeries+CoreDataProperties.swift in Sources */,
-				4AF9A62F2AC08B0000E5D8F0 /* Extensions.swift in Sources */,
 				4A63B1522AC7795E0007D4C6 /* JoinStoryArc+CoreDataClass.swift in Sources */,
-				4A765ABC2AB6120C002EFF7C /* BookDetailsView.swift in Sources */,
+				4A765ABC2AB6120C002EFF7C /* BookTileView.swift in Sources */,
 				4A63B14C2AC778C90007D4C6 /* Books+CoreDataClass.swift in Sources */,
 				4A63B15A2AC78ED30007D4C6 /* BookSeries+CoreDataClass.swift in Sources */,
 				4A765AA42AB60BBA002EFF7C /* ComixCrateApp.swift in Sources */,
-				4AF9A6312AC0CDF600E5D8F0 /* Test.swift in Sources */,
 				4A765ABE2AB61254002EFF7C /* AddComicView.swift in Sources */,
+				4A3ECC522AD4CF60003D48D0 /* BookDetailsView.swift in Sources */,
 				4AF9A62C2ABF8F3100E5D8F0 /* EditComic.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -309,6 +361,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -370,6 +423,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -397,6 +451,7 @@
 				CODE_SIGN_ENTITLEMENTS = ComixCrateTest/ComixCrate.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"ComixCrateTest/Preview Content\"";
 				DEVELOPMENT_TEAM = Y854J87CU9;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -436,6 +491,7 @@
 				CODE_SIGN_ENTITLEMENTS = ComixCrateTest/ComixCrate.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"ComixCrateTest/Preview Content\"";
 				DEVELOPMENT_TEAM = Y854J87CU9;
 				ENABLE_HARDENED_RUNTIME = YES;

@@ -8,11 +8,22 @@
 import SwiftUI
 
 struct AddStoryArcButton: View {
+    @Binding var storyArcs: [String]
+    @Binding var storyArcParts: [Int16]
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Button(action: {
+            storyArcs.append("")
+            storyArcParts.append(0)
+        }, label: {
+            Image(systemName: "plus.circle.fill")
+        })
     }
 }
 
-#Preview {
-    AddStoryArcButton()
+struct AddStoryArcButton_Previews: PreviewProvider {
+    static var previews: some View {
+        AddStoryArcButton(storyArcs: .constant(["StoryArc"]), storyArcParts: .constant([1]))
+    }
 }
+

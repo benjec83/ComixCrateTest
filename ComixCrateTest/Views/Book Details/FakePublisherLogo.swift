@@ -9,7 +9,15 @@ import SwiftUI
 
 struct FakePublisherLogo: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ZStack {
+            Circle()
+                .fill(Color.accentColor)
+                .frame(width: 40, height: 40)
+            
+            Text("P")
+                .font(.headline)
+                .foregroundColor(.white)
+        }
     }
 }
 

@@ -19,6 +19,10 @@ class SelectedBookViewModel: ObservableObject {
     @Published var tempStoryArcs: [String] = []
     @Published var tempStoryArcParts: [Int16] = []
     @Published var originalStoryArcs: [String]
+    @Published var tempReleasedDate: Date
+    @Published var tempPurchaseDate: Date
+    @Published var tempCoverDate: Date
+    @Published var tempSummary: String
     
     var book: Books
     
@@ -28,7 +32,6 @@ class SelectedBookViewModel: ObservableObject {
                tempSeries != book.bookSeries?.name ||
         tempStoryArcParts != (book.joinStoryArcs?.compactMap { ($0 as? JoinStoryArc)?.storyArcPart } ?? [])
     }
-
     
     init(book: Books, moc: NSManagedObjectContext) {
         
@@ -37,18 +40,48 @@ class SelectedBookViewModel: ObservableObject {
         
         // Initialize the viewModel's properties with the book's properties
         self.tempTitle = book.title ?? ""
-        self.tempIssueNumber = String(book.issueNumber )
+        self.tempIssueNumber = String(book.issueNumber)
         self.tempSeries = book.bookSeries?.name ?? ""
+        
+        // Initialize tempReleasedDate
+        if let releaseDate = book.releaseDate {
+            self.tempReleasedDate = releaseDate
+        } else {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "MM/dd/yyyy"
+            self.tempReleasedDate = dateFormatter.date(from: "01/01/1900") ?? Date()
+        }
+        
+        // Initialize the Purchased Date
+        if let purchaseDate = book.purchaseDate {
+            self.tempPurchaseDate = purchaseDate
+        } else {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "MM/dd/yyyy"
+            self.tempPurchaseDate = dateFormatter.date(from: "01/01/1900") ?? Date()
+        }
+        
+        // Initialize the Cover Date
+        if let coverDate = book.coverDate {
+            self.tempCoverDate = coverDate
+        } else {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "MM/dd/yyyy"
+            self.tempCoverDate = dateFormatter.date(from: "01/01/1900") ?? Date()
+        }
+        
+        self.tempSummary = book.summary ?? ""
         self.originalStoryArcs = book.joinStoryArcs?.compactMap { ($0 as? JoinStoryArc)?.storyArc?.name } ?? []
         self.tempStoryArcs = self.originalStoryArcs
         self.tempStoryArcParts = book.joinStoryArcs?.compactMap { ($0 as? JoinStoryArc)?.storyArcPart } ?? []
-
+        
         
         // Debugging statement
-        print("EditBookViewModel initialized with:")
+        print("SelectedBookViewModel initialized with:")
         print("ViewModel - Title: \(tempTitle), Issue Number: \(tempIssueNumber), Series: \(tempSeries)")
-        print("Original Book - Title: \(book.title ?? "nil"), Issue Number: \(String(book.issueNumber )), Series: \(book.bookSeries?.name ?? "nil")")
+        print("Original Book - Title: \(book.title ?? "nil"), Issue Number: \(String(book.issueNumber)), Series: \(book.bookSeries?.name ?? "nil")")
     }
+
 
     func saveStoryArcs(for book: Books, joinStoryArc: String, joinStoryArcPart: Int16) {
         // Add the initial story arc and its part to the arrays
@@ -135,6 +168,11 @@ class SelectedBookViewModel: ObservableObject {
             newSeries.name = tempSeries
             book.bookSeries = newSeries
         }
+        
+        book.releaseDate = tempReleasedDate
+        book.coverDate = tempCoverDate
+        book.purchaseDate = tempPurchaseDate
+        book.summary = tempSummary
         
         // Handle story arcs
 

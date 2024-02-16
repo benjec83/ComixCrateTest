@@ -60,7 +60,7 @@
 		4A63B1592AC78ED30007D4C6 /* BookSeries+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BookSeries+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		4A63B15C2AC790E70007D4C6 /* BookLocations+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BookLocations+CoreDataClass.swift"; sourceTree = "<group>"; };
 		4A63B15D2AC790E70007D4C6 /* BookLocations+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BookLocations+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		4A765AA02AB60BBA002EFF7C /* ComixCrateTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ComixCrateTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4A765AA02AB60BBA002EFF7C /* ComixCrate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ComixCrate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A765AA32AB60BBA002EFF7C /* ComixCrateApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComixCrateApp.swift; sourceTree = "<group>"; };
 		4A765AA52AB60BBA002EFF7C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		4A765AA72AB60BBB002EFF7C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -125,7 +125,7 @@
 		4A765AA12AB60BBA002EFF7C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4A765AA02AB60BBA002EFF7C /* ComixCrateTest.app */,
+				4A765AA02AB60BBA002EFF7C /* ComixCrate.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -221,9 +221,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		4A765A9F2AB60BBA002EFF7C /* ComixCrateTest */ = {
+		4A765A9F2AB60BBA002EFF7C /* ComixCrate */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4A765AAF2AB60BBB002EFF7C /* Build configuration list for PBXNativeTarget "ComixCrateTest" */;
+			buildConfigurationList = 4A765AAF2AB60BBB002EFF7C /* Build configuration list for PBXNativeTarget "ComixCrate" */;
 			buildPhases = (
 				4A765A9C2AB60BBA002EFF7C /* Sources */,
 				4A765A9D2AB60BBA002EFF7C /* Frameworks */,
@@ -233,11 +233,11 @@
 			);
 			dependencies = (
 			);
-			name = ComixCrateTest;
+			name = ComixCrate;
 			packageProductDependencies = (
 			);
 			productName = ComixCrate;
-			productReference = 4A765AA02AB60BBA002EFF7C /* ComixCrateTest.app */;
+			productReference = 4A765AA02AB60BBA002EFF7C /* ComixCrate.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -255,7 +255,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 4A765A9B2AB60BBA002EFF7C /* Build configuration list for PBXProject "ComixCrateTest" */;
+			buildConfigurationList = 4A765A9B2AB60BBA002EFF7C /* Build configuration list for PBXProject "ComixCrate" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -270,7 +270,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				4A765A9F2AB60BBA002EFF7C /* ComixCrateTest */,
+				4A765A9F2AB60BBA002EFF7C /* ComixCrate */,
 			);
 		};
 /* End PBXProject section */
@@ -526,7 +526,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		4A765A9B2AB60BBA002EFF7C /* Build configuration list for PBXProject "ComixCrateTest" */ = {
+		4A765A9B2AB60BBA002EFF7C /* Build configuration list for PBXProject "ComixCrate" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4A765AAD2AB60BBB002EFF7C /* Debug */,
@@ -535,7 +535,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4A765AAF2AB60BBB002EFF7C /* Build configuration list for PBXNativeTarget "ComixCrateTest" */ = {
+		4A765AAF2AB60BBB002EFF7C /* Build configuration list for PBXNativeTarget "ComixCrate" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4A765AB02AB60BBB002EFF7C /* Debug */,

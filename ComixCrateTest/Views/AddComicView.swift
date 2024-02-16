@@ -14,7 +14,7 @@ struct AddComicView: View {
     
     @State private var showChangesAlert: Bool = false
     @State private var isEditing: Bool = false
-
+    
     
     @FetchRequest(fetchRequest:
                     BookSeries.sortedBySeriesFetchRequest)
@@ -40,7 +40,7 @@ struct AddComicView: View {
     // Show Suggestions based on text field and existing entity values
     @State private var showSeriesSuggestions = false
     @State private var showStoryArcSuggestions = false
-
+    
     @State private var filteredSeries: [BookSeries] = []
     @State private var filteredStoryArcs: [BookStoryArcs] = []
     
@@ -53,8 +53,8 @@ struct AddComicView: View {
             isEditing = true
         }
     }
-
-
+    
+    
     
     var body: some View {
         NavigationStack {
@@ -71,16 +71,23 @@ struct AddComicView: View {
                     
                         .popover(
                             isPresented: $showSeriesSuggestions,
-                            attachmentAnchor: .point(.bottomTrailing),
+                            attachmentAnchor: .point(.center),
                             arrowEdge: .leading,
                             content: {
                                 SuggestionPopover(header: "Choose an Existing Series", filter: filteredSeries.map { $0.name ?? "" }, selection: $series, showPopover: $showSeriesSuggestions)
                             }
                         )
                     
-
+                    
                 }
-                Section {
+                Section(
+                    header:
+                        HStack {
+                            Text("Story Arcs")
+                            Spacer()
+                            AddStoryArcButton(storyArcs: $storyArcs, storyArcParts: $storyArcParts)
+                        }
+                ) {
                     HStack {
                         TextField("Story Arc", text: $joinStoryArc)
                             .onChange(of: joinStoryArc) {
@@ -90,63 +97,49 @@ struct AddComicView: View {
                         
                             .popover(
                                 isPresented: $showStoryArcSuggestions,
-                                attachmentAnchor: .point(.bottomTrailing),
+                                attachmentAnchor: .point(.center),
                                 arrowEdge: .leading,
                                 content: {
                                     SuggestionPopover(header: "Choose an Existing Story Arcs", filter: filteredStoryArcs.map { $0.name ?? "" }, selection: $joinStoryArc, showPopover: $showStoryArcSuggestions)
                                 }
-                        )
+                            )
                         TextField("Story Arc Part", value: $joinStoryArcPart, format: .number)
-
+                        
                     }
-
+                    
                     List {
                         ForEach(storyArcs.indices, id: \.self) { index in
                             TextField("Story Arc \(index + 1)", text: $storyArcs[index])
-                                .onChange(of: storyArcs[index]) { _ in
-                                    filteredStoryArcs = allStoryArcsByName.filter { $0.name?.lowercased().contains(storyArcs[index].lowercased()) ?? false }
-                                    showStoryArcSuggestions = !filteredStoryArcs.isEmpty && !storyArcs[index].isEmpty
+                                .onChange(of: storyArcs[index]) { (oldValue, newValue) in
+                                    filteredStoryArcs = allStoryArcsByName.filter { $0.name?.lowercased().contains(newValue.lowercased()) ?? false }
+                                    showStoryArcSuggestions = !filteredStoryArcs.isEmpty && !newValue.isEmpty
                                 }
+
                                 .popover(
                                     isPresented: $showStoryArcSuggestions,
-                                    attachmentAnchor: .point(.bottomTrailing),
+                                    attachmentAnchor: .point(.center),
                                     arrowEdge: .leading,
                                     content: {
                                         SuggestionPopover(header: "Choose an Existing Story Arcs", filter: filteredStoryArcs.map { $0.name ?? "" }, selection: Binding(get: { storyArcs[index] }, set: { storyArcs[index] = $0 }), showPopover: $showStoryArcSuggestions)
                                     }
                                 )
                             TextField("Story Arc Part \(index + 1)", value: $storyArcParts[index], format: .number)
-
+                            
                         }
                         .onDelete(perform: removeStoryArc)
                     }
-
-                    HStack {
-                        Button("Add Story Arc") {
-                            storyArcs.append("")
-                            storyArcParts.append(0)                        }
-                        .buttonStyle(.borderedProminent)
-                        Button("Remove Last Story Arc") {
-                            if !storyArcs.isEmpty {
-                                storyArcs.removeLast()
-                            }
-                        }
-                        .buttonStyle(.bordered)
-
-                    }
-                    
                 }
                 
                 Section {
                     HStack {
                         Spacer()
                         Button("Save") {
-                            let viewModel: EditBookViewModel
+                            let viewModel: SelectedBookViewModel
                             if let existingBook = book {
-                                viewModel = EditBookViewModel(book: existingBook, moc: moc)
+                                viewModel = SelectedBookViewModel(book: existingBook, moc: moc)
                             } else {
                                 let newBook = Books(context: moc)
-                                viewModel = EditBookViewModel(book: newBook, moc: moc)
+                                viewModel = SelectedBookViewModel(book: newBook, moc: moc)
                             }
                             viewModel.tempTitle = title
                             viewModel.tempIssueNumber = issueNumber
@@ -181,8 +174,9 @@ struct AddComicView: View {
     }
     func removeStoryArc(at offsets: IndexSet) {
         storyArcs.remove(atOffsets: offsets)
+        storyArcParts.remove(atOffsets: offsets)
     }
-
+    
 }
 
 struct AddComicView_Previews: PreviewProvider {

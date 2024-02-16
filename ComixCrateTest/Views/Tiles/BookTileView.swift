@@ -10,7 +10,7 @@ import CoreData
 
 struct BookTileView: View {
     @Environment(\.managedObjectContext) var moc
-    @ObservedObject var viewModel: EditBookViewModel
+    @ObservedObject var viewModel: SelectedBookViewModel
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -71,13 +71,13 @@ struct BookTileView: View {
 }
 
 
-struct BookDetailsView_Previews: PreviewProvider {
+struct BookTileView_Previews: PreviewProvider {
     static var previews: some View {
         // Fetch a sample book from the preview context
         let sampleBook = try! NSManagedObjectContext.preview.fetch(Books.fetchRequest()).first!
         
-        // Initialize the EditBookViewModel with the sample book
-        let viewModel = EditBookViewModel(book: sampleBook, moc: NSManagedObjectContext.preview)
+        // Initialize the SelectedBookViewModel with the sample book
+        let viewModel = SelectedBookViewModel(book: sampleBook, moc: NSManagedObjectContext.preview)
         
         // Use the sample book and view model in the BookDetailsView preview
         BookTileView(viewModel: viewModel)

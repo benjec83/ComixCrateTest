@@ -8,9 +8,9 @@
 import SwiftUI
 import CoreData
 
-struct BookRowView: View {
+struct BookRow: View {
     @Environment(\.managedObjectContext) var moc
-    @ObservedObject var viewModel: EditBookViewModel
+    @ObservedObject var viewModel: SelectedBookViewModel
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -48,10 +48,10 @@ struct BookRow_Previews: PreviewProvider {
         // Fetch a sample book from the preview context
         let sampleBook = try! NSManagedObjectContext.preview.fetch(Books.fetchRequest()).first!
         
-        // Initialize the EditBookViewModel with the sample book
-        let viewModel = EditBookViewModel(book: sampleBook, moc: NSManagedObjectContext.preview)
+        // Initialize the SelectedBookViewModel with the sample book
+        let viewModel = SelectedBookViewModel(book: sampleBook, moc: NSManagedObjectContext.preview)
         
         // Use the sample book and view model in the BookDetailsView preview
-        BookRowView(viewModel: viewModel)
+        BookRow(viewModel: viewModel)
     }
 }

@@ -175,42 +175,33 @@ class SelectedBookViewModel: ObservableObject {
         book.summary = tempSummary
         
         // Handle story arcs
-
+        // First, clear existing story arcs relationships to avoid duplicates
+        if let joinStoryArcs = book.joinStoryArcs as? Set<JoinStoryArc> {
+            for joinStoryArc in joinStoryArcs {
+                moc.delete(joinStoryArc)
+            }
+        }
+        
+        // Now, re-add them based on the current state of tempStoryArcs and tempStoryArcParts
         for (index, arcName) in tempStoryArcs.enumerated() {
-            // Fetch the story arc from the database
             let arcFetchRequest: NSFetchRequest<BookStoryArcs> = BookStoryArcs.fetchRequest()
             arcFetchRequest.predicate = NSPredicate(format: "name == %@", arcName)
             
+            let storyArc: BookStoryArcs
             if let existingArc = try? moc.fetch(arcFetchRequest).first {
-                // If the story arc already exists, update it
-                existingArc.name = arcName
-                
-                // Update the storyArcPart property of the corresponding JoinStoryArc relationship
-                if let joinArc = book.joinStoryArcs?.first(where: { ($0 as? JoinStoryArc)?.storyArc?.name == arcName }) as? JoinStoryArc {
-                    joinArc.storyArcPart = tempStoryArcParts[index]
-                }
+                storyArc = existingArc
             } else {
-                // If the story arc doesn't exist, create it and then create a JoinStoryArc relationship
-                let newStoryArc = BookStoryArcs(context: moc)
-                newStoryArc.name = arcName
-                
-                let join = JoinStoryArc(context: moc)
-                join.book = book
-                join.storyArc = newStoryArc
-                join.storyArcPart = tempStoryArcParts[index]
+                storyArc = BookStoryArcs(context: moc)
+                storyArc.name = arcName
             }
+            
+            let join = JoinStoryArc(context: moc)
+            join.book = book
+            join.storyArc = storyArc
+            join.storyArcPart = tempStoryArcParts[index]
         }
 
-        // Check and delete any BookStoryArcs entity that no longer has any related JoinStoryArcs
-        let allStoryArcsFetchRequest: NSFetchRequest<BookStoryArcs> = BookStoryArcs.fetchRequest()
-        if let allStoryArcs = try? moc.fetch(allStoryArcsFetchRequest) {
-            for storyArc in allStoryArcs {
-                if storyArc.joinStoryArc?.count == 0 {
-                    moc.delete(storyArc)
-                }
-            }
-        }
-
+        // Attempt to save changes
         if moc.hasChanges {
             do {
                 try moc.save()

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -77,6 +77,10 @@
 		4AF9A62B2ABF8F3100E5D8F0 /* EditComic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditComic.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		4ADFA2012D99A20C004F2529 /* Controllers */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Controllers; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
+
 /* Begin PBXFrameworksBuildPhase section */
 		4A765A9D2AB60BBA002EFF7C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
@@ -133,6 +137,7 @@
 		4A765AA22AB60BBA002EFF7C /* ComixCrateTest */ = {
 			isa = PBXGroup;
 			children = (
+				4ADFA2012D99A20C004F2529 /* Controllers */,
 				4AE7ED7A2AC904AD00FE7ADC /* Info.plist */,
 				4AE822102AC2010500BFD34F /* ViewModels */,
 				4AF9A62D2AC08AEE00E5D8F0 /* Helpers */,
@@ -232,6 +237,9 @@
 			buildRules = (
 			);
 			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				4ADFA2012D99A20C004F2529 /* Controllers */,
 			);
 			name = ComixCrate;
 			packageProductDependencies = (

@@ -32,8 +32,8 @@ struct EditComic: View {
     
     // Show Suggestions based on text field and existing entity values
     @State private var showSeriesSuggestions = false
-    @State private var showStoryArcSuggestions = false
-    
+    @State private var showStoryArcSuggestions: [Int: Bool] = [:]
+
     @State private var filteredSeries: [BookSeries] = []
     @State private var filteredStoryArcs: [BookStoryArcs] = []
     
@@ -87,28 +87,37 @@ struct EditComic: View {
                     .datePickerStyle(.compact)
             }
             
-            Section(header:
-                        HStack {
+            Section(header: HStack {
                 Text("Story Arcs")
                 Spacer()
                 AddStoryArcButton(storyArcs: $viewModel.tempStoryArcs, storyArcParts: $viewModel.tempStoryArcParts)
-            }
-            ) {
+            }) {
                 ForEach(viewModel.tempStoryArcs.indices, id: \.self) { index in
                     HStack {
                         TextField("Story Arc \(index + 1)", text: $viewModel.tempStoryArcs[index])
-                            .onChange(of: viewModel.tempStoryArcs[index]) { (oldValue, newValue) in
+                            .onChange(of: viewModel.tempStoryArcs[index]) { oldValue, newValue in
                                 filteredStoryArcs = allStoryArcsByName.filter { $0.name?.lowercased().contains(newValue.lowercased()) ?? false }
-                                showStoryArcSuggestions = !filteredStoryArcs.isEmpty && !newValue.isEmpty
-                                print("ShowStoryArcSuggestions: \($showStoryArcSuggestions.wrappedValue)")
+                                showStoryArcSuggestions[index] = !filteredStoryArcs.isEmpty && !newValue.isEmpty
                             }
 
                             .popover(
-                                isPresented: $showStoryArcSuggestions,
+                                isPresented: Binding<Bool>(
+                                    get: { showStoryArcSuggestions[index] ?? false },
+                                    set: { showStoryArcSuggestions[index] = $0 }
+                                ),
                                 attachmentAnchor: .point(.center),
                                 arrowEdge: .leading,
                                 content: {
-                                    SuggestionPopover(header: "Choose an Existing Story Arcs", filter: filteredStoryArcs.map { $0.name ?? "" }, selection: Binding(get: { viewModel.tempStoryArcs[index] }, set: { viewModel.tempStoryArcs[index] = $0 }), showPopover: $showStoryArcSuggestions)
+                                    SuggestionPopover(header: "Choose an Existing Story Arcs", filter: filteredStoryArcs.map { $0.name ?? "" }, selection: Binding<String>(
+                                        get: { viewModel.tempStoryArcs[index] },
+                                        set: { newValue in
+                                            viewModel.tempStoryArcs[index] = newValue
+                                            showStoryArcSuggestions[index] = false // Reset the popover state to false after selection.
+                                        }
+                                    ), showPopover: Binding<Bool>(
+                                        get: { showStoryArcSuggestions[index] ?? false },
+                                        set: { showStoryArcSuggestions[index] = $0 }
+                                    ))
                                 }
                             )
                         TextField("Story Arc Part \(index + 1)", value: $viewModel.tempStoryArcParts[index], format: .number)
@@ -116,6 +125,7 @@ struct EditComic: View {
                 }
                 .onDelete(perform: removeStoryArc)
             }
+
             Section(header: Text("Summary")) {
                 TextField("Summary", text: $viewModel.tempSummary, axis: .vertical)
             }

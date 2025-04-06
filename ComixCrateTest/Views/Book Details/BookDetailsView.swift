@@ -12,7 +12,7 @@ struct BookDetailsView: View {
     @Environment(\.managedObjectContext) var moc
     
     @Binding var book: Books?
-//    @Binding var isEditMode: Bool
+    //    @Binding var isEditMode: Bool
     @Binding var activeSheet: ActiveSheet?
     
     var bookTitle: String {
@@ -90,41 +90,42 @@ struct BookMainDetails: View {
     @Binding var book: Books?
     
     var body: some View {
-            ScrollView {
+        ScrollView {
+            HStack {
                 HStack {
-                    HStack {
-                        Text("Thumbnail")
-                    }
-                    VStack {
-                        BookMainDetailsBasics(book: $book)
-                        BookMainDetailsSecondary(book: $book)
-                        BookActionButtons(book: book)
-                    }
-                    .padding(.all)
-                    .frame(width: 380)
+                    Text("Thumbnail")
                 }
-                .frame(width: 710)
-                
-                Divider()
-                    .padding(.horizontal, 30.0)
-                VStack(alignment: .leading) {
-                    HStack {
-                        Text("Summary:")
-                            .fontWeight(.semibold)
-                            .padding(.bottom, 5.0)
-                        Spacer()
-                    }
-                    Text(book!.summary ?? "")
+                .frame(width: 240)
+                VStack {
+                    BookMainDetailsBasics(book: $book)
+                    BookMainDetailsSecondary(book: $book)
+                    BookActionButtons(book: book)
                 }
-                .font(.subheadline)
-                .padding(.horizontal)
-                .frame(maxWidth: 690)
+                .padding(.all)
+                .frame(width: 380)
             }
+//            .frame(width: 710)
             
-            .onAppear {
-                print("This will be the caching of HighQualityThumbnail if needed")
-                //            shouldCacheHighQualityThumbnail = true
+            Divider()
+                .padding(.horizontal, 30.0)
+            VStack(alignment: .leading) {
+                HStack {
+                    Text("Summary:")
+                        .fontWeight(.semibold)
+                        .padding(.bottom, 5.0)
+                    Spacer()
+                }
+                Text(book!.summary ?? "")
             }
+            .font(.subheadline)
+            .padding(.horizontal)
+            .frame(maxWidth: 690)
+        }
+        
+        .onAppear {
+            print("This will be the caching of HighQualityThumbnail if needed")
+            //            shouldCacheHighQualityThumbnail = true
+        }
     }
 }
 
@@ -192,39 +193,41 @@ struct BookMainDetailsBasics: View {
     
     var body: some View {
         
-            HStack {
-                VStack(alignment: .leading) {
-                    
-                    Text("\(seriesName ?? "") (\(String(book?.volumeYear ?? 0000)))")
-                        .font(.body)
-                        .lineLimit(2)
-                    Text("Story Arcs: \(storyArcNames.joined(separator: ", ").isEmpty ? "" : storyArcNames.joined(separator: ", "))")
-                        .font(.caption)
-                        .fontWeight(.light)
-                        .lineLimit(1)
-                }
+        HStack {
+            VStack(alignment: .leading) {
+                
+                Text("\(seriesName ?? "") (\(String(book?.volumeYear ?? 0000)))")
+                    .font(.body)
+                    .lineLimit(2)
+                Text("Story Arcs: \(storyArcNames.joined(separator: ", ").isEmpty ? "" : storyArcNames.joined(separator: ", "))")
+                    .font(.caption)
+                    .fontWeight(.light)
+                    .lineLimit(1)
             }
-            
-            .multilineTextAlignment(.leading)
             Spacer()
-            
-                .frame(width: 360)
         }
+        
+        .multilineTextAlignment(.leading)
+        Spacer()
+            .frame(width: 360)
+    }
 }
 struct BookMainDetailsSecondary: View {
     
     @Binding var book: Books?
     
     var body: some View {
-        HStack {
-            detailSection(title: "Publisher", image: AnyView(FakePublisherLogo()))
-            Divider()
-            detailSection(title: "Released", mainText: book!.releaseDate?.yearString, subText: book!.releaseDate?.formattedString)
-            Divider()
-            detailSection(title: "Length", mainText: "\(book!.pageCount)", subText: "Pages")
+        VStack {
+            HStack {
+                detailSection(title: "Publisher", image: AnyView(FakePublisherLogo()))
+                Divider()
+                detailSection(title: "Released", mainText: book!.releaseDate?.yearString, subText: book!.releaseDate?.formattedString)
+                Divider()
+                detailSection(title: "Length", mainText: "\(book!.pageCount)", subText: "Pages")
+            }
+            .padding(.top)
+            .frame(height: 65)
         }
-        .padding(.top)
-        .frame(height: 65)
     }
     private func detailSection(title: String, image: AnyView? = nil, mainText: String? = nil, subText: String? = nil) -> some View {
         VStack {
